@@ -1,18 +1,22 @@
 <template>
   <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
-  <WebCalculator/>
+<!--  <HelloWorld msg="Welcome to Your Vue.js App"/>-->
+<!--  <WebCalculator/>-->
+  <p><router-link to="/helloWorld">Go to Hello Page</router-link></p>
+  <p><router-link to="/web-calculator">Go to Web Calculator</router-link></p>
+  <router-view/>
+
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-import WebCalculator from './components/WebCalculator.vue'
+// import HelloWorld from './components/HelloWorld.vue'
+// import WebCalculator from './components/WebCalculator.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld,
-    WebCalculator
+    // HelloWorld,
+    // WebCalculator
   },
 }
 </script>

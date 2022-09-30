@@ -1,6 +1,16 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
+    {{helloWorld}}
+    <p>
+      <router-link to="/">Go to Home</router-link>
+    </p>
+    <p>
+      <router-link to="/users/2">User</router-link>
+    </p>
+    <!-- route outlet -->
+    <!-- component matched by the route will render here -->
+    <router-view></router-view>
   </div>
 </template>
 
@@ -9,6 +19,16 @@ export default {
   name: 'HelloWorld',
   props: {
     msg: String
+  },
+  data() {
+    return  {
+      hello: 'HelloWorld',
+    }
+  },
+  computed: {
+    helloWorld(){
+      return this.hello + " 123"
+    }
   }
 }
 </script>
