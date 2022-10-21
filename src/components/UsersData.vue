@@ -1,10 +1,13 @@
 <template>
+  {{$route.params}}
   <div>{{ $route.params.id }}</div>
   <div>{{ userId }}</div>
-  <button @click="goHome"></button>
+  <button @click="goHome">go Home</button>
 </template>
 
 <script>
+import axios from "axios";
+
 export default {
   name: "UsersData",
   computed: {
@@ -15,7 +18,14 @@ export default {
   methods: {
     goHome() {
       this.$router.push('/web-calculator')
+    },
+    async getData() {
+      const {data} =await axios.get('http://localhost:8888/backend/basic/web/index.php/api/say-hello')
+      console.log(data)
     }
+  },
+  mounted() {
+    this.getData()
   }
 }
 </script>

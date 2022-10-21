@@ -13,7 +13,7 @@ const Home = {template: '<div>Home</div>'}
 const routes = [
     {path: '/', component: Home},
     {path: '/helloWorld', component: HelloWorld},
-    {path: '/users/:id', component: UsersData },
+    {path: '/users/:id/posts/:postId', component: UsersData },
     {path: '/web-calculator', component: WebCalculator },
 ]
 

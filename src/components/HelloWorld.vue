@@ -6,7 +6,7 @@
       <router-link to="/">Go to Home</router-link>
     </p>
     <p>
-      <router-link to="/users/2">User</router-link>
+      <router-link to="/users/2/posts/5">User</router-link>
     </p>
     <!-- route outlet -->
     <!-- component matched by the route will render here -->
