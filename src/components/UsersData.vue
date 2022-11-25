@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import axios from "axios";
+import httpClient from "../../services/http.service";
 
 export default {
   name: "UsersData",
@@ -26,7 +26,7 @@ export default {
       this.$router.push('/web-calculator')
     },
     async getData() {
-      const {data} =await axios.get('http://localhost:8888/backend/basic/web/index.php/api/say-hello')
+      const {data} =await httpClient.get('api/say-hello')
       this.apiData = data
       console.log(data)
     }

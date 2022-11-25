@@ -22,9 +22,14 @@
     </div>
   </div>
 </div>
+  <div>{{users}}</div>
+  <div>{{text}}</div>
+  <div v-for="(key, value) of doneTodos" :key="key">{{value}}</div>
 </template>
 
 <script>
+import {mapActions, mapState, mapGetters} from "vuex";
+
 export default {
 name: "InfoFull",
   props: {
@@ -34,11 +39,19 @@ name: "InfoFull",
   },
   data(){
     return{
+      text: 'Hello World'
     }
   },
-  methods:{
+  computed: {
+    ...mapState('usersdata',['users']),
+    ...mapGetters('usersdata',['doneTodos']),
   },
-
+  methods:{
+    ...mapActions('usersdata', ['GET_USERS']),
+  },
+  async mounted() {
+  await this.GET_USERS()
+  }
 }
 
 </script>

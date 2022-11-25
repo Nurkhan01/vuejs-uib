@@ -3,7 +3,7 @@
 <!--  <HelloWorld msg="Welcome to Your Vue.js App"/>-->
 <!--  <WebCalculator/>-->
   <p><router-link to="/helloWorld">Go to Hello Page</router-link></p>
-  <p><router-link to="/web-calculator">Go to Web Calculator</router-link></p>
+  <p v-if="role=='admin'"><router-link to="/web-calculator">Go to Web Calculator</router-link></p>
   <router-view/>
 
 </template>
@@ -18,6 +18,11 @@ export default {
     // HelloWorld,
     // WebCalculator
   },
+  computed : {
+    role(){
+      return localStorage.getItem('role')
+    }
+  }
 }
 </script>
 
